@@ -128,11 +128,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
+    <Compile Include="Entities\Adress.cs" />
     <Compile Include="Entities\BookASeat.cs" />
     <Compile Include="Entities\ClassRoom.cs" />
     <Compile Include="Entities\Communication.cs" />
@@ -153,7 +155,12 @@
     <Compile Include="Migrations\202402081057008_create_admin_table.designer.cs">
       <DependentUpon>202402081057008_create_admin_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402131211390_created_adress_table.cs" />
+    <Compile Include="Migrations\202402131211390_created_adress_table.designer.cs">
+      <DependentUpon>202402131211390_created_adress_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\SendMessageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -393,10 +400,12 @@
     <Content Include="Views\Default\PartialTestimonials.cshtml" />
     <Content Include="Views\Default\PartialFooter.cshtml" />
     <Content Include="Views\Default\PartialScripts.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\ContactHeaderPartial.cshtml" />
+    <Content Include="Views\Contact\ContactAdressPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -431,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402081057008_create_admin_table.resx">
       <DependentUpon>202402081057008_create_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402131211390_created_adress_table.resx">
+      <DependentUpon>202402131211390_created_adress_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
