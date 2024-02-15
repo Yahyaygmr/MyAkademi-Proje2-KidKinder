@@ -1,53 +1,31 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_UILayout.cshtml";
 }
+<!-- Header Start -->
+@Html.Action("PartialFeature", "Default")
+<!-- Header End -->
+<!-- Facilities Start -->
+@Html.Action("PartialServices", "Default")
 
-<!DOCTYPE html>
-<html lang="en">
-@Html.Action("PartialHead","Default")
-
-<body>
-    <!-- Navbar Start -->
-    @Html.Action("PartialNavbar", "Default")
-    <!-- Navbar End -->
-    <!-- Header Start -->
-    @Html.Action("PartialFeature", "Default")
-    <!-- Header End -->
-    <!-- Facilities Start -->
-    @Html.Action("PartialServices", "Default")
-
-    <!-- Facilities Start -->
-    <!-- About Start -->
-    @Html.Action("PartialAbout", "Default")
+<!-- Facilities Start -->
+<!-- About Start -->
+@Html.Action("PartialAbout", "Default")
 
 
-    <!-- About End -->
-    <!-- Class Start -->
-    @Html.Action("PartialClassRooms", "Default")
+<!-- About End -->
+<!-- Class Start -->
+@Html.Action("PartialClassRooms", "Default")
 
-    <!-- Class End -->
-    <!-- Registration Start -->
-    @Html.Action("PartialBookASeat", "Default")
-    <!-- Registration End -->
-    <!-- Team Start -->
-    @Html.Action("PartialTeachers", "Default")
+<!-- Class End -->
+<!-- Registration Start -->
+@Html.Action("PartialBookASeat", "Default")
+<!-- Registration End -->
+<!-- Team Start -->
+@Html.Action("PartialTeachers", "Default")
 
-    <!-- Team End -->
-    <!-- Testimonial Start -->
-    @Html.Action("PartialTestimonials", "Default")
+<!-- Team End -->
+<!-- Testimonial Start -->
+@Html.Action("PartialTestimonials", "Default")
 
-    <!-- Testimonial End -->
-    <!-- Footer Start -->
-    @Html.Action("PartialFooter", "Default")
-    <!-- Footer End -->
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary p-3 back-to-top">
-        <i class="fa fa-angle-double-up"></i>
-    </a>
-    @Html.Action("PartialScripts", "Default")
-    <!-- JavaScript Libraries -->
-
-</body>
-</html>
-
+<!-- Testimonial End -->
