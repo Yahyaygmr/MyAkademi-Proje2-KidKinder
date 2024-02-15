@@ -12,6 +12,7 @@ namespace KidKinder.Controllers
         KidKinderContext context = new KidKinderContext();
         public ActionResult Index()
         {
+            ViewBag.header = "Contact";
             return View();
         }
         public PartialViewResult ContactHeaderPartial()
