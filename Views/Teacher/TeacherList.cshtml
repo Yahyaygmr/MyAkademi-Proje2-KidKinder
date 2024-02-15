@@ -1,0 +1,38 @@
+﻿@model List<KidKinder.Entities.Teacher>
+
+@{
+    ViewBag.Title = "TeacherList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <h1>Öğretmen Listesi</h1>
+</div>
+
+<div class="container m-4">
+    <table class="table">
+
+        <tr class="bg-dark text-white">
+            <th>#</th>
+            <th>Öğretmen Adı</th>
+            <th>Alanı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TeacherId</td>
+                <td>@item.NameSurname</td>
+                <td>@item.Title</td>
+                <td><a href="#" class="btn btn-danger">Sil</a></td>
+                <td><a href="#" class="btn btn-info">Güncelle</a></td>
+            </tr>
+        }
+
+    </table>
+    <div class="container">
+        <a href="#" class="btn btn-primary">+ Yeni Öğretmen Ekle</a>
+    </div>
+</div>
+
