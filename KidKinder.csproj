@@ -128,10 +128,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\ClasesController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdminTeacherController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
@@ -649,10 +653,15 @@
     <Content Include="Views\AdminLayout\PartialNavBarProfileHeader.cshtml" />
     <Content Include="Views\AdminLayout\PartialSideBar.cshtml" />
     <Content Include="Views\AdminLayout\PartialScripts.cshtml" />
-    <Content Include="Views\Teacher\TeacherList.cshtml" />
+    <Content Include="Views\AdminTeacher\TeacherList.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\Clases\Index.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Class\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
