@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers
 {
-    public class TeacherController : Controller
+    public class GalleryController : Controller
     {
-        // GET: Teacher
+        // GET: Gallery
         public ActionResult Index()
         {
             return View();
