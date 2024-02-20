@@ -19,25 +19,25 @@
             @Html.Action("PartialNavBar", "AdminLayout")
 
             <div class="pcoded-main-container">
+
                 <div class="pcoded-wrapper">
                     @Html.Action("PartialSideBar", "AdminLayout")
                     <div class="pcoded-content">
+                        @Html.Action("PartialSubHeader", "AdminLayout")
+                        @RenderBody()
+                        <!--<div class="pcoded-inner-content">-->
+                        <!-- Main-body start -->
+                        <!--<div class="main-body">
+    <div class="page-wrapper">-->
+                        <!-- Page-body start -->
+                        <!--<div class="page-body">
+                    <div class="card pt-5 pb-5">
 
-                        <div class="pcoded-inner-content">
-                            <!-- Main-body start -->
-                            <div class="main-body">
-                                <div class="page-wrapper">
-                                    <!-- Page-body start -->
-                                    <div class="page-body">
-                                        <div class="card pt-5 pb-5">
-                                            @RenderBody()
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
                     </div>
                     <div id="styleSelector"></div>
                 </div>
