@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace KidKinder.Controllers
 {
+    [Authorize]
     public class AdminTeacherController : Controller
     {
         KidKinderContext context = new KidKinderContext();
@@ -21,28 +22,12 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult CreateTeacher()
         {
+            ViewBag.branches = GetBranches();
             return View();
         }
         [HttpPost]
         public ActionResult CreateTeacher(Teacher teacher)
         {
-            //    if (teacher.ImageUrl != null)
-            //    {
-            //        string filename = Path.GetFileName(teacher.ImageUrl);
-            //        string folderPath = Server.MapPath("~/UploadedFiles/");
-
-            //        // Eğer belirtilen klasör mevcut değilse oluştur
-            //        if (!Directory.Exists(folderPath))
-            //        {
-            //            Directory.CreateDirectory(folderPath);
-            //        }
-
-            //        // Dosya yolunu oluştur
-            //        string filePath = folderPath + filename;
-
-            //        // Dosyayı yükle
-            //        teacher.ImageUrl = filePath;
-            //    }
             context.Teachers.Add(teacher);
             context.SaveChanges();
             return RedirectToAction("TeacherList");
@@ -57,6 +42,7 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult UpdateTeacher(int id)
         {
+            ViewBag.branches = GetBranches();
             var teacher = context.Teachers.Find(id);
 
             return View(teacher);
@@ -66,11 +52,21 @@ namespace KidKinder.Controllers
         {
             var tch = context.Teachers.Find(teacher.TeacherId);
             tch.NameSurname = teacher.NameSurname;
-            tch.Title = teacher.Title;
+            tch.BranchId = teacher.BranchId;
             tch.ImageUrl = teacher.ImageUrl;
             context.SaveChanges();
 
             return RedirectToAction("TeacherList");
+        }
+
+        public List<SelectListItem> GetBranches()
+        {
+            return (from x in context.Branches.ToList()
+                    select new SelectListItem
+                    {
+                        Text = x.Name,
+                        Value = x.BranchId.ToString()
+                    }).ToList();
         }
     }
 }

@@ -134,15 +134,18 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Adress.cs" />
     <Compile Include="Entities\BookASeat.cs" />
+    <Compile Include="Entities\Branch.cs" />
     <Compile Include="Entities\ClassRoom.cs" />
     <Compile Include="Entities\Communication.cs" />
     <Compile Include="Entities\Contact.cs" />
@@ -170,6 +173,18 @@
     <Compile Include="Migrations\202402151124142_create_notification_table.cs" />
     <Compile Include="Migrations\202402151124142_create_notification_table.designer.cs">
       <DependentUpon>202402151124142_create_notification_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221058209_drop_title_from_teacher_table.cs" />
+    <Compile Include="Migrations\202402221058209_drop_title_from_teacher_table.designer.cs">
+      <DependentUpon>202402221058209_drop_title_from_teacher_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221105216_created_branhes_table.cs" />
+    <Compile Include="Migrations\202402221105216_created_branhes_table.designer.cs">
+      <DependentUpon>202402221105216_created_branhes_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221109500_create_relation_between_branch_and_teachers.cs" />
+    <Compile Include="Migrations\202402221109500_create_relation_between_branch_and_teachers.designer.cs">
+      <DependentUpon>202402221109500_create_relation_between_branch_and_teachers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageViewModel.cs" />
@@ -213,6 +228,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\error404\css\style.css" />
+    <Content Include="Templates\error404\img\bg.jpg" />
+    <Content Include="Templates\error404\index.html" />
+    <Content Include="Templates\error404\readme.txt" />
     <Content Include="Templates\kidkinder-1.0.0\about.html" />
     <Content Include="Templates\kidkinder-1.0.0\blog.html" />
     <Content Include="Templates\kidkinder-1.0.0\class.html" />
@@ -664,6 +683,8 @@
     <Content Include="Views\AdminLayout\PartialSubHeader.cshtml" />
     <Content Include="Views\AdminTeacher\UpdateTeacher.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -708,6 +729,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402151124142_create_notification_table.resx">
       <DependentUpon>202402151124142_create_notification_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221058209_drop_title_from_teacher_table.resx">
+      <DependentUpon>202402221058209_drop_title_from_teacher_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221105216_created_branhes_table.resx">
+      <DependentUpon>202402221105216_created_branhes_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221109500_create_relation_between_branch_and_teachers.resx">
+      <DependentUpon>202402221109500_create_relation_between_branch_and_teachers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
