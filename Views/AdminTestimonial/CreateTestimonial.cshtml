@@ -1,0 +1,55 @@
+﻿@model KidKinder.Entities.Testimonial
+@{
+    ViewBag.Title = "CreateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="main-body">
+    <div class="page-wrapper">
+        <!-- Page-body start -->
+        <div class="page-body">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>Referanslar</h5>
+                    <span>Referans ekleme</span>
+                    <div class="card-header-right">
+                        <ul class="list-unstyled card-option">
+                            <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                            <li><i class="fa fa-window-maximize full-card"></i></li>
+                            <li><i class="fa fa-minus minimize-card"></i></li>
+                            <li><i class="fa fa-refresh reload-card"></i></li>
+                            <li><i class="fa fa-trash close-card"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-block table-border-style">
+                    <form method="post">
+                        <div class="form-group">
+                            <label>İsim Soyisim</label>
+                            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Unvan</label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Resim Url</label>
+                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Yorum</label>
+                            @Html.TextBoxFor(x => x.Comment, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group mt-3">
+                            <button class="btn btn-success btn-round">Kaydet</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

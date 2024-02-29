@@ -1,10 +1,9 @@
-﻿@model List<KidKinder.Entities.Teacher>
-
+﻿@model List<KidKinder.Entities.Testimonial>
 @{
-    ViewBag.Title = "TeacherList";
+    ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
-
 
 <div class="pcoded-inner-content">
     <!-- Main-body start -->
@@ -15,8 +14,8 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h5>Öğretmen Listesi Tablosu</h5>
-                        <span>Öğretmenler ile ilgili işlemleri yapabileceğiniz alandır.</span>
+                        <h5>Referanslar</h5>
+                        <span>Reaferansların listesi</span>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
                                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -34,8 +33,9 @@
                                     <tr class="bg-primary">
                                         <th>#</th>
                                         <th>Resim</th>
-                                        <th>Ad Soyad</th>
-                                        <th>Branş</th>
+                                        <th>İsim Soyisim</th>
+                                        <th>Unvan</th>
+                                        <th>Yorum</th>
                                         <th>Sil</th>
                                         <th>Güncelle</th>
                                     </tr>
@@ -43,18 +43,20 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        count++;
                                         <tr>
-                                            <td>@item.TeacherId</td>
-                                            <td><img src="@item.ImageUrl" style="width:70px; height:70px; object-fit:contain;"/></td>
+                                            <td>@count</td>
+                                            <td><img src="@item.ImageUrl" style="width:70px; height:70px; object-fit:contain;" /></td>
                                             <td>@item.NameSurname</td>
-                                            <td>@item.Branch.Name</td>
-                                            <td><a href="/AdminTeacher/DeleteTeacher/@item.TeacherId" class="btn btn-danger btn-round">Sil</a></td>
-                                            <td><a href="/AdminTeacher/UpdateTeacher/@item.TeacherId" class="btn btn-info btn-round">Güncelle</a></td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Comment</td>
+                                            <td><a href="/AdminTestimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger btn-round">Sil</a></td>
+                                            <td><a href="/AdminTestimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-info btn-round">Güncelle</a></td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
-                                <a href="/AdminTeacher/CreateTeacher/" class="btn btn-primary btn-round">+ Yeni Öğretmen Girişi</a>
+                            <a href="/AdminTestimonial/CreateTestimonial/" class="btn btn-primary btn-round">+ Yeni Referans Girişi</a>
                         </div>
                     </div>
                 </div>
@@ -62,35 +64,4 @@
         </div>
     </div>
 </div>
-@*<div class="container">
-        <h3>Öğretmen Listesi</h3>
-        <span>Öğretmenler ile ilgili işlemlerin yapılacağı alandır.</span>
-    </div>
-
-    <div class="container m-4">
-        <table class="table table-hover">
-
-            <tr class="bg-dark text-white">
-                <th>#</th>
-                <th>Öğretmen Adı</th>
-                <th>Alanı</th>
-                <th>Sil</th>
-                <th>Güncelle</th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.TeacherId</td>
-                    <td>@item.NameSurname</td>
-                    <td>@item.Title</td>
-                    <td><a href="#" class="btn btn-danger">Sil</a></td>
-                    <td><a href="#" class="btn btn-info">Güncelle</a></td>
-                </tr>
-            }
-
-        </table>
-        <div class="container">
-            <a href="#" class="btn btn-primary">+ Yeni Öğretmen Ekle</a>
-        </div>
-    </div>*@
 

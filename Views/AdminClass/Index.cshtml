@@ -1,0 +1,66 @@
+﻿@model List<KidKinder.Entities.ClassRoom>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Sınıflar</h5>
+                        <span>Aktif sınıfların listesi</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-3">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>Yaş Aralığı</th>
+                                        <th>Fiyat</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                        <th>Detay</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.AgeOfKids</td>
+                                            <td>@item.Price.ToString("c")</td>
+                                            <td><a href="/AdminClass/Deleteclass/@item.ClassRoomId" class="btn btn-danger btn-round">Sil</a></td>
+                                            <td><a href="/AdminClass/UpdateClass/@item.ClassRoomId" class="btn btn-info btn-round">Güncelle</a></td>
+                                            <td><a href="/AdminClass/ClassDetails/@item.ClassRoomId" class="btn btn-secondary btn-round">Detay</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/AdminClass/CreateClass/" class="btn btn-primary btn-round">+ Yeni Sınıf Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

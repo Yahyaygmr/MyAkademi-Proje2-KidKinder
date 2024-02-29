@@ -1,0 +1,62 @@
+﻿@model KidKinder.Entities.About
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Hakkımızda</h5>
+                        <span>Hakkımızda Alanı Güncelleme</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <form method="post">
+                            @Html.HiddenFor(x => x.AboutId)
+                            <div class="form-group mt-3">
+                                <label>Başlık</label>
+                                @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group mt-3">
+                                <label>Alt Başlık</label>
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group mt-3">
+                                <label>Büyük Resim</label>
+                                @Html.TextBoxFor(x => x.AboutBigImageUrl, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group mt-3">
+                                <label>Küçük Resim</label>
+                                @Html.TextBoxFor(x => x.AboutSmallImageUrl, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group mt-3">
+                                <label>Açıklama</label>
+                                @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group mt-3">
+                                <button class="btn btn-success btn-round">Güncelle</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
