@@ -1,0 +1,84 @@
+﻿@model List<KidKinder.Entities.Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Mesajlar</h5>
+                        <span>Gelen Mesajlar</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th>#</th>
+                                        <th>Gönderen</th>
+                                        <th>Mail</th>
+                                        <th>Konu</th>
+                                        <th>Mesajı Aç</th>
+                                        <th>Mesajı Sil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        if (Model == null)
+                                        {
+                                            <h3>Şuanda gösterilecek mesajınız yok !</h3>
+                                        }
+                                        else
+                                        {
+                                            if (item.IsRead == true)
+                                            {
+                                                <tr>
+                                                    <td>@item.ContactId</td>
+                                                    <td>@item.NameSurname</td>
+                                                    <td>@item.Email</td>
+                                                    <td>@item.Subject</td>
+                                                    <td><a href="/AdminContact/MessageDetail/@item.ContactId" class="btn btn-primary btn-round">Mesajı Aç</a></td>
+                                                    <td><a href="/AdminContact/DeleteMessage/@item.ContactId" class="btn btn-danger btn-round">Mesajı Sil</a></td>
+                                                </tr>
+                                            }
+                                            else
+                                            {
+                                                <tr style="font-weight: bold;">
+                                                    <td>@item.ContactId</td>
+                                                    <td><span class="fa fa-circle mr-3"></span>@item.NameSurname</td>
+                                                    <td>@item.Email</td>
+                                                    <td>@item.Subject</td>
+                                                    <td><a href="/AdminContact/MessageDetail/@item.ContactId" class="btn btn-primary btn-round">Mesajı Aç</a></td>
+                                                    <td><a href="/AdminContact/DeleteMessage/@item.ContactId" class="btn btn-danger btn-round">Mesajı Sil</a></td>
+                                                </tr>
+                                            }
+                                        }
+
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

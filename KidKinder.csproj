@@ -129,7 +129,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminAboutListController.cs" />
+    <Compile Include="Controllers\AdminAdressController.cs" />
+    <Compile Include="Controllers\AdminBranchController.cs" />
+    <Compile Include="Controllers\AdminClassController.cs" />
+    <Compile Include="Controllers\AdminContactController.cs" />
+    <Compile Include="Controllers\AdminFeatureController.cs" />
+    <Compile Include="Controllers\AdminGalleryController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AdminMailSubscribeController.cs" />
+    <Compile Include="Controllers\AdminServiceController.cs" />
+    <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\ClasesController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -150,6 +161,7 @@
     <Compile Include="Entities\Communication.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\Feature.cs" />
+    <Compile Include="Entities\Gallery.cs" />
     <Compile Include="Entities\MailSubscribe.cs" />
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Service.cs" />
@@ -185,6 +197,10 @@
     <Compile Include="Migrations\202402221109500_create_relation_between_branch_and_teachers.cs" />
     <Compile Include="Migrations\202402221109500_create_relation_between_branch_and_teachers.designer.cs">
       <DependentUpon>202402221109500_create_relation_between_branch_and_teachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402290902273_created_gallery_table_and_booaseat_classroom_connection.cs" />
+    <Compile Include="Migrations\202402290902273_created_gallery_table_and_booaseat_classroom_connection.designer.cs">
+      <DependentUpon>202402290902273_created_gallery_table_and_booaseat_classroom_connection.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageViewModel.cs" />
@@ -685,9 +701,31 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\AdminAboutList\Index.cshtml" />
+    <Content Include="Views\AdminAboutList\CreateAboutList.cshtml" />
+    <Content Include="Views\AdminAboutList\UpdateAboutList.cshtml" />
+    <Content Include="Views\AdminAbout\Index.cshtml" />
+    <Content Include="Views\AdminAdress\Index.cshtml" />
+    <Content Include="Views\AdminBranch\Index.cshtml" />
+    <Content Include="Views\AdminBranch\CreateBranch.cshtml" />
+    <Content Include="Views\AdminBranch\UpdateBranch.cshtml" />
+    <Content Include="Views\AdminContact\Index.cshtml" />
+    <Content Include="Views\AdminContact\MessageDetail.cshtml" />
+    <Content Include="Views\AdminFeature\Index.cshtml" />
+    <Content Include="Views\AdminMailSubscribe\Index.cshtml" />
+    <Content Include="Views\AdminService\Index.cshtml" />
+    <Content Include="Views\AdminService\CreateService.cshtml" />
+    <Content Include="Views\AdminService\UpdateService.cshtml" />
+    <Content Include="Views\AdminTestimonial\Index.cshtml" />
+    <Content Include="Views\AdminTestimonial\CreateTestimonial.cshtml" />
+    <Content Include="Views\AdminTestimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\AdminClass\Index.cshtml" />
+    <Content Include="Views\AdminClass\CreateClass.cshtml" />
+    <Content Include="Views\AdminClass\UpdateClass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminGallery\" />
     <Folder Include="Views\Class\" />
   </ItemGroup>
   <ItemGroup>
@@ -738,6 +776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402221109500_create_relation_between_branch_and_teachers.resx">
       <DependentUpon>202402221109500_create_relation_between_branch_and_teachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402290902273_created_gallery_table_and_booaseat_classroom_connection.resx">
+      <DependentUpon>202402290902273_created_gallery_table_and_booaseat_classroom_connection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

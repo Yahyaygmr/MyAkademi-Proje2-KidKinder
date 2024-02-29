@@ -1,0 +1,68 @@
+﻿@model KidKinder.Entities.ClassRoom
+@{
+    ViewBag.Title = "CreateClass";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Sınıflar</h5>
+                        <span>Yeni bir sınıf oluştur</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <form method="post">
+                            <div class="form-group">
+                                <label>Başlık</label>
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Yaş Aralığı</label>
+                                @Html.TextBoxFor(x => x.AgeOfKids, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Sınıf Kapasitesi</label>
+                                @Html.TextBoxFor(x => x.TotalSeats, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Ders Zamanı</label>
+                                @Html.TextBoxFor(x => x.ClassTime, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Fiyat</label>
+                                @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Resim</label>
+                                @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label>Açıklama</label>
+                                @Html.TextAreaFor(x => x.Description,4,2, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group mt-3">
+                                <button class="btn btn-success btn-round">Kaydet</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

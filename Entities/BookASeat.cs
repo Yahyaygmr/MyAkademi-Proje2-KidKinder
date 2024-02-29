@@ -11,5 +11,8 @@ namespace KidKinder.Entities
         public string Name { get; set; }
         public string Email { get; set; }
 
+        public int ClassRoomId { get; set; }
+        public virtual ClassRoom ClassRoom { get; set; }
+
     }
 }
