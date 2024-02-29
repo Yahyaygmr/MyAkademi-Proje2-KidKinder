@@ -18,6 +18,7 @@ namespace KidKinder.Controllers
         }
         public ActionResult ClassDetails(int id)
         {
+            ViewBag.Id = id;
             var cls = context.ClassRooms.Find(id);
             return View(cls);
         }
@@ -59,6 +60,11 @@ namespace KidKinder.Controllers
             context.ClassRooms.Remove(cls);
             context.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public PartialViewResult PartialBook(int id)
+        {
+            var book = context.bookASeats.Where(x => x.ClassRoomId == id).ToList();
+            return PartialView(book);
         }
     }
 }

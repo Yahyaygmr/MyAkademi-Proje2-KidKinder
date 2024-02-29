@@ -733,6 +733,9 @@
     <Content Include="Views\AdminGallery\Index.cshtml" />
     <Content Include="Views\AdminGallery\CreateImage.cshtml" />
     <Content Include="Views\AdminGallery\UpdateImage.cshtml" />
+    <Content Include="Views\Dashboard\PartialTecherList.cshtml" />
+    <Content Include="Views\AdminClass\ClassDetails.cshtml" />
+    <Content Include="Views\AdminClass\PartialBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
