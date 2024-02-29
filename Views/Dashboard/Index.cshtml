@@ -3,7 +3,30 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        // Define the chart to be drawn.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Element');
+        data.addColumn('number', 'Percentage');
+        data.addRows([
+            ['Matematik', 0.38],
+            ['Resim', 0.21],
+            ['Müzik', 0.11],
+            ['İspanyolca', 0.19],
+            ['Edebiyat', 0.11]
+        ]);
+        // Instantiate and draw the chart.
+        var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
+        chart.draw(data, null);
+    }
+</script>
 <link rel="stylesheet" type="text/css" href="~/Templates/material_able-main/assets/css/font-awesome-n.min.css">
+
 <div class="pcoded-inner-content">
     <!-- Main-body start -->
     <div class="main-body">
@@ -32,8 +55,8 @@
                                                 <i class="fas fa-volume-down text-c-green f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>100%</h5>
-                                                <p class="text-muted m-b-0">Volume</p>
+                                                <h5>5</h5>
+                                                <p class="text-muted m-b-0">Sınıf Sayısı</p>
                                             </div>
                                         </div>
                                     </div>
@@ -46,9 +69,10 @@
                                             </div>
                                             <div class="col-8 p-l-0">
                                                 <h5>
-                                                    Ortalama Fiyat
+                                                    ₺ @ViewBag.avgClassroomPrice
+
                                                 </h5>
-                                                <p class="text-muted m-b-0">₺ @ViewBag.avgClassroomPrice</p>
+                                                <p class="text-muted m-b-0">Ortalama Fiyat</p>
                                             </div>
                                         </div>
                                     </div>
@@ -58,8 +82,8 @@
                                                 <i class="far fa-envelope-open text-c-blue f-24"></i>
                                             </div>
                                             <div class="col-8 p-l-0">
-                                                <h5>120</h5>
-                                                <p class="text-muted m-b-0">Mails</p>
+                                                <h5>12</h5>
+                                                <p class="text-muted m-b-0">Mesaj</p>
                                             </div>
                                         </div>
                                     </div>
@@ -67,9 +91,145 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-4 col-md-12">
+                        <div class="card mat-clr-stat-card text-white red ">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-red">
+                                        <i class="fas fa-star mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.edTeacherCount</h5>
+                                        <p class="m-b-0">Edebiyat Öğretmeni</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mat-clr-stat-card text-white green">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-green">
+                                        <i class="fas fa-trophy mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.resimTeacherCount</h5>
+                                        <p class="m-b-0">Resim Öğretmeni</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-12">
+                        <div class="card mat-clr-stat-card text-white green ">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-green">
+                                        <i class="fas fa-star mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.matTeacherCount</h5>
+                                        <p class="m-b-0">Matematik Öğretmeni</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mat-clr-stat-card text-white blue">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-3 text-center bg-c-blue">
+                                        <i class="fas fa-trophy mat-icon f-24"></i>
+                                    </div>
+                                    <div class="col-9 cst-cont">
+                                        <h5>@ViewBag.ispTeacherCount</h5>
+                                        <p class="m-b-0">İspanyolca Öğretmeni</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Material statustic card end -->
+                    <!-- order-visitor start -->
+                    <!-- order-visitor end -->
+                    <!--  sale analytics start -->
+                    @Html.Action("PartialTecherList", "Dashboard")
+                    <div class="col-xl-6 col-md-12">
+                        <div class="row">
+                            <!-- sale card start -->
+
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                        <h6 class="m-b-0">Gelen Mesaj Sayısı</h6>
+                                        <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-down m-r-15 text-c-red"></i>@ViewBag.mesageCount</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                        <h6 class="m-b-0">Sınıf Sayısı</h6>
+                                        <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-up m-r-15 text-c-green"></i> @ViewBag.sinifCount</h4>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card bg-c-red total-card">
+                                    <div class="card-block">
+                                        <div class="text-left">
+                                            <h4>@ViewBag.refCount</h4>
+                                            <p class="m-0">Referans sayısı</p>
+                                        </div>
+                                        <span class="label bg-c-red value-badges">15%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card bg-c-green total-card">
+                                    <div class="card-block">
+                                        <div class="text-left">
+                                            <h4>@ViewBag.newsletter</h4>
+                                            <p class="m-0">Mail Listesi Abone</p>
+                                        </div>
+                                        <span class="label bg-c-green value-badges">20%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                        <h6 class="m-b-0">En Yüksek Ücretli Kurs Fiyatı</h6>
+                                        <h4 class="m-t-15 m-b-15">₺ @ViewBag.coursePrice</h4>
+                                        <p class="m-b-0">36% From Last 6 Months</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card text-center order-visitor-card">
+                                    <div class="card-block">
+                                        <h6 class="m-b-0">En Yüksek Ücretli Kurs</h6>
+                                        <h4 class="m-t-15 m-b-15">@ViewBag.coursePriceCource</h4>
+                                
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- sale card end -->
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
+@*@ViewBag.edb
+@ViewBag.isp
+@ViewBag.mat
+@ViewBag.muz
+@ViewBag.res*@
+<div class="container">
+    <h3>Öğretmenlerin Branşlara Göre Dağılımı</h3>
+    <br />
+    <div id="myPieChart" />
 </div>
 

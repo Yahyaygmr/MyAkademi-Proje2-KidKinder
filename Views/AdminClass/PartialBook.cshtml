@@ -1,0 +1,28 @@
+﻿@model List<KidKinder.Entities.BookASeat>
+    @{ 
+        int count = 0;
+    }
+<h2>Bu Sınıfa Ön Başvuruda Bulunanlar</h2>
+<hr />
+<div class="table-responsive">
+    <table class="table table-hover table-striped mb-3">
+        <thead>
+            <tr class="bg-primary">
+                <th>#</th>
+                <th>Adı Soyadı</th>
+                <th>Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td> 
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
