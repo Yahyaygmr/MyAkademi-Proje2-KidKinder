@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers
 {
+    [AllowAnonymous]
     public class AboutUsController : Controller
     {
         // GET: AboutUs

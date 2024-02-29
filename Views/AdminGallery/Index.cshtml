@@ -1,0 +1,153 @@
+﻿@model List<KidKinder.Entities.Gallery>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 20px;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(20px);
+            -ms-transform: translateX(20px);
+            transform: translateX(20px);
+        }
+
+    /* Renk seçenekleri için */
+    .slider {
+        background-color: #ccc; /* Kapalı rengi */
+    }
+
+        .slider:before {
+            background-color: white; /* Kayar buton rengi */
+        }
+
+    input:checked + .slider {
+        background-color: #1D24CA; /* Açık rengi */
+    }
+</style>
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Galeri</h5>
+                        <span>Galeri yönetim sayfası</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <table class="table table-hover" id="tableSearch">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th>#</th>
+                                    <th>Görsel</th>
+                                    <th>Sitede Göster</th>
+                                    <th>Sil</th>
+                                    <th>Düzenle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>
+                                            <div class="avatar flex-shrink-0 me-3">
+                                                <img src="@item.ImageUrl" alt="User" class="rounded"  style="width:70px; height:70px; object-fit:contain;"/>
+                                            </div>
+                                        </td>
+                                        @if (item.Status)
+                                        {
+                                            <td>
+                                                <label class="switch">
+                                                    <a href="/AdminGallery/SetStatusFalse/@item.GalleryId">
+                                                        <input type="checkbox" @(item.Status ? "checked" : "") disabled>
+                                                        <span class="slider"></span>
+                                                    </a>
+                                                </label>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <label class="switch">
+                                                    <a href="/AdminGallery/SetStatusTrue/@item.GalleryId">
+                                                        <input type="checkbox" @(item.Status ? "checked" : "") disabled>
+                                                        <span class="slider"></span>
+                                                    </a>
+                                                </label>
+                                            </td>
+                                        }
+
+                                        <td><a href="/AdminGallery/DeleteImage/@item.GalleryId" class="btn btn-danger btn-round">Sil</a></td>
+                                        <td><a href="/AdminGallery/UpdateImage/@item.GalleryId" class="btn btn-warning btn-round">Düzenle</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                        <div class="my-4">
+                            <a href="/AdminGallery/CreateImage/" class="btn btn-primary btn-round">+ Yeni Resim Ekle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

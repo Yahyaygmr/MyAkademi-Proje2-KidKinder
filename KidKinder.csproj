@@ -202,6 +202,10 @@
     <Compile Include="Migrations\202402290902273_created_gallery_table_and_booaseat_classroom_connection.designer.cs">
       <DependentUpon>202402290902273_created_gallery_table_and_booaseat_classroom_connection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402291507104_add_gallery_status.cs" />
+    <Compile Include="Migrations\202402291507104_add_gallery_status.designer.cs">
+      <DependentUpon>202402291507104_add_gallery_status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageViewModel.cs" />
     <Compile Include="Models\TeacherViewModel.cs" />
@@ -722,10 +726,16 @@
     <Content Include="Views\AdminClass\Index.cshtml" />
     <Content Include="Views\AdminClass\CreateClass.cshtml" />
     <Content Include="Views\AdminClass\UpdateClass.cshtml" />
+    <Content Include="Views\Default\PartialNewsletter.cshtml" />
+    <Content Include="Views\Default\PartialGetInTouch.cshtml" />
+    <Content Include="Views\Default\PartialAboutList.cshtml" />
+    <Content Include="Views\Contact\ContactSendMessagePartial.cshtml" />
+    <Content Include="Views\AdminGallery\Index.cshtml" />
+    <Content Include="Views\AdminGallery\CreateImage.cshtml" />
+    <Content Include="Views\AdminGallery\UpdateImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminGallery\" />
     <Folder Include="Views\Class\" />
   </ItemGroup>
   <ItemGroup>
@@ -779,6 +789,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402290902273_created_gallery_table_and_booaseat_classroom_connection.resx">
       <DependentUpon>202402290902273_created_gallery_table_and_booaseat_classroom_connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402291507104_add_gallery_status.resx">
+      <DependentUpon>202402291507104_add_gallery_status.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
