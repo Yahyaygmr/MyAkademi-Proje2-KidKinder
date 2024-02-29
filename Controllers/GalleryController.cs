@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KidKinder.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,12 +7,14 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers
 {
+    [AllowAnonymous]
     public class GalleryController : Controller
     {
-        // GET: Gallery
+        KidKinderContext context = new KidKinderContext();
         public ActionResult Index()
         {
-            return View();
+            var values = context.Galeries.Where(x =>x.Status == true).ToList();
+            return View(values);
         }
     }
 }

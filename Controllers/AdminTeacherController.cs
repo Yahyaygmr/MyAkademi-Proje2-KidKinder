@@ -10,7 +10,6 @@ using System.Web.UI.WebControls;
 
 namespace KidKinder.Controllers
 {
-    [Authorize]
     public class AdminTeacherController : Controller
     {
         KidKinderContext context = new KidKinderContext();
