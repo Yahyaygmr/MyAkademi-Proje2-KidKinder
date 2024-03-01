@@ -28,6 +28,11 @@ GoogleCharts
 Bu proje, Code First yaklaşımıyla oluşturulmuştur, böylece veritabanı tasarımı ve geliştirme süreçleri birlikte yönetilir, verimlilik artırılır ve projenin bakımı kolaylaştırılır.
 
 <h1>Proje Görselleri</h1>
+<h2>Video</h2>
+
+https://github.com/Yahyaygmr/MyAkademi-Proje2-KidKinder/assets/101245826/a52019cc-1e58-4038-ac3c-63593dfddd96
+
+
 
 <h2>Veritabanı</h2>
 
